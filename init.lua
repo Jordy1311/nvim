@@ -158,13 +158,13 @@ require("lazy").setup({
 
       -- Document existing key chains
       require("which-key").add({
-        { "<leader>c", group = "[C]ode" },
-        { "<leader>d", group = "[D]ocument" },
-        { "<leader>r", group = "[R]ename" },
-        { "<leader>s", group = "[S]earch" },
-        { "<leader>w", group = "[W]orkspace" },
-        { "<leader>t", group = "[T]oggle" },
-        { "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
+        { "<leader>c", group = "[c]ode" },
+        { "<leader>d", group = "[d]ocument" },
+        { "<leader>r", group = "[r]ename" },
+        { "<leader>s", group = "[s]earch" },
+        { "<leader>w", group = "[w]orkspace" },
+        { "<leader>t", group = "[t]oggle" },
+        { "<leader>h", group = "Git [h]unk", mode = { "n", "v" } },
       })
     end,
   },
