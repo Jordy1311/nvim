@@ -473,6 +473,9 @@ require("lazy").setup({
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require("mini.surround").setup()
 
+      -- start page
+      require('mini.starter').setup()
+
       -- Simple and easy statusline.
       local statusline = require("mini.statusline")
       statusline.setup({ use_icons = vim.g.have_nerd_font })
