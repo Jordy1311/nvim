@@ -13,6 +13,9 @@ vim.opt.relativenumber = true
 -- required for bufferline
 vim.opt.termguicolors = true
 
+-- tells vim I'm using a dark background for color selection
+vim.opt.background = "dark"
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
 
