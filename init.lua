@@ -494,11 +494,9 @@ require("lazy").setup({
     opts = {
       ensure_installed = { "bash", "diff", "html", "lua", "luadoc", "markdown", "markdown_inline", "query", "vim", "vimdoc" },
       auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = { "ruby" },
-      },
-      indent = { enable = true, disable = { "ruby" } },
+      highlight = { enable = true },
+      indent = { enable = true },
+
       incremental_selection = {
         enable = true,
         keymaps = {
