@@ -523,12 +523,12 @@ require("lazy").setup({
   -- require("kickstart.plugins.lint"),
   -- require("kickstart.plugins.debug"),
 
-  -- My own imports
-  "wellle/context.vim",
+  -- Custom imports
   require("custom.plugins.bufferline"),
   require("custom.plugins.colorizer"),
   require("custom.plugins.conform"),
   require("custom.plugins.lazygit"),
+  require("custom.plugins.treesitter-context"),
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
