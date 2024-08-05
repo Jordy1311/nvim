@@ -474,7 +474,7 @@ require("lazy").setup({
       require("mini.surround").setup()
 
       -- start page
-      require('mini.starter').setup()
+      require("mini.starter").setup()
 
       -- Simple and easy statusline.
       local statusline = require("mini.statusline")
@@ -504,28 +504,18 @@ require("lazy").setup({
     },
     config = function(_, opts)
       require("nvim-treesitter.install").prefer_git = true
-      ---@diagnostic disable-next-line: missing-fields
       require("nvim-treesitter.configs").setup(opts)
-
-      -- There are additional nvim-treesitter modules that you can use to interact
-      -- with nvim-treesitter. You should go explore a few and see what interests you:
-      --
-      --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-      --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-      --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
 
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-
+  -- Here are some example plugins that I've included in the Kickstart repository.
   require("kickstart.plugins.autopairs"),
   require("kickstart.plugins.neo-tree"),
   require("kickstart.plugins.indent_line"),
   -- require("kickstart.plugins.lint"),
   -- require("kickstart.plugins.debug"),
 
-  -- my own imports
+  -- My own imports
   require("custom.plugins.bufferline"),
   require("custom.plugins.colorizer"),
   require("custom.plugins.conform"),
