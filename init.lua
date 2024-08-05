@@ -501,6 +501,14 @@ require("lazy").setup({
         additional_vim_regex_highlighting = { "ruby" },
       },
       indent = { enable = true, disable = { "ruby" } },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<leader>ss",
+          node_incremental = "<leader>si",
+          node_decremental = "<leader>sd",
+        },
+      },
     },
     config = function(_, opts)
       require("nvim-treesitter.install").prefer_git = true
