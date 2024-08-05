@@ -524,6 +524,7 @@ require("lazy").setup({
   -- require("kickstart.plugins.debug"),
 
   -- My own imports
+  "wellle/context.vim",
   require("custom.plugins.bufferline"),
   require("custom.plugins.colorizer"),
   require("custom.plugins.conform"),
