@@ -142,7 +142,7 @@ require("lazy").setup({
       current_line_blame_opts = {
         virt_text = true,
         virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
-        delay = 2000,
+        delay = 5000,
         ignore_whitespace = true,
         virt_text_priority = 100,
       },
@@ -155,8 +155,6 @@ require("lazy").setup({
     event = "VimEnter", -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
       require("which-key").setup()
-
-      -- Document existing key chains
       require("which-key").add({
         { "<leader>c", group = "[c]ode" },
         { "<leader>d", group = "[d]ocument" },
