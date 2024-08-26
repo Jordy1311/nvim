@@ -1,4 +1,4 @@
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.autoread = true
 
 -- makes splitting the window easier
