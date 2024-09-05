@@ -158,11 +158,12 @@ require("lazy").setup({
       require("which-key").add({
         { "<leader>c", group = "[c]ode" },
         { "<leader>d", group = "[d]ocument" },
+        { "<leader>f", group = "[f]ormat" },
+        { "<leader>h", group = "Git [h]unk", mode = { "n", "v" } },
         { "<leader>r", group = "[r]ename" },
         { "<leader>s", group = "[s]earch" },
-        { "<leader>w", group = "[w]orkspace" },
         { "<leader>t", group = "[t]oggle" },
-        { "<leader>h", group = "Git [h]unk", mode = { "n", "v" } },
+        { "<leader>w", group = "[w]orkspace" },
       })
     end,
   },
@@ -490,7 +491,7 @@ require("lazy").setup({
         "typescript",
         "vim",
         "vimdoc",
-        "yaml"
+        "yaml",
       },
       auto_install = true,
       highlight = { enable = true },

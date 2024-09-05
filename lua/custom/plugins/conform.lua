@@ -4,7 +4,7 @@ return {
   cmd = { "ConformInfo" },
   keys = {
     {
-      "<leader>F",
+      "<leader>fb",
       function()
         require("conform").format({ async = true, lsp_fallback = true })
       end,
@@ -12,7 +12,7 @@ return {
       desc = "[F]ormat buffer",
     },
     {
-      "<leader>f",
+      "<leader>fc",
       function()
         local ignore_filetypes = { "lua" }
         if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
