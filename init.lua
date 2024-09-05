@@ -275,11 +275,11 @@ require("lazy").setup({
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "document [s]ymbols")
+          -- map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "document [s]ymbols")
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
-          map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "workspace [s]ymbols")
+          -- map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "workspace [s]ymbols")
 
           -- Rename the variable under your cursor.
           map("<leader>rn", vim.lsp.buf.rename, "re[n]ame")
@@ -288,11 +288,11 @@ require("lazy").setup({
           -- or a suggestion from your LSP for this to activate.
           map("<leader>ca", vim.lsp.buf.code_action, "code [a]ction")
 
-          map("gD", vim.lsp.buf.declaration, "goto [D]eclaration")
+          -- map("gD", vim.lsp.buf.declaration, "goto [D]eclaration")
 
-          -- I've deleted the autocommands that highlighted all words the same under cursor.
+          -- I've deleted the autocommand that highlighted all instances of the word under cursor.
           -- I could get this back from kickstart.
-          -- Yeeted because it highlighted the full angular inline template as a word...
+          -- Yeeted because it highlighted the full angular inline template as a single "word"...
           local client = vim.lsp.get_client_by_id(event.data.client_id)
 
           -- The following code creates a keymap to toggle inlay hints in your
@@ -398,8 +398,8 @@ require("lazy").setup({
         completion = { completeopt = "menu,menuone,noinsert" },
         mapping = cmp.mapping.preset.insert({
           -- Scroll the documentation window [b]ack / [f]orward
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
+          -- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+          -- ["<C-f>"] = cmp.mapping.scroll_docs(4),
 
           ["<Enter>"] = cmp.mapping.confirm({ select = true }),
 
