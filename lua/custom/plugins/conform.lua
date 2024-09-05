@@ -9,7 +9,7 @@ return {
         require("conform").format({ async = true, lsp_fallback = true })
       end,
       mode = "",
-      desc = "[f]ormat buffer",
+      desc = "format [b]uffer",
     },
     {
       "<leader>fc",
@@ -54,7 +54,7 @@ return {
         format_hunk()
       end,
       mode = "",
-      desc = "[f]ormat changes",
+      desc = "format [c]hanges",
     },
   },
   opts = {

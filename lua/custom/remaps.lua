@@ -2,8 +2,8 @@ vim.opt.wrap = true
 vim.opt.autoread = true
 
 -- makes splitting the window easier
-vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "[S]plit [V]ertical" })
-vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "[S]plit [H]orizontal" })
+vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "split [v]ertical" })
+vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "split [h]orizontal" })
 
 -- moves selected text up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected text down" })
@@ -19,8 +19,8 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search instance. Keep curso
 vim.keymap.set("n", "Q", "<nop>", { desc = "Prevents default behaviour" })
 
 -- buffer management
-vim.keymap.set("n", "<leader>x", ":bd<enter>", { desc = "Close current buffer safely" })
-vim.keymap.set("n", "<leader>X", ":bd!<enter>", { desc = "Close current buffer UNsafely" })
+vim.keymap.set("n", "<leader>xs", ":bd<enter>", { desc = "Close current buffer [s]afely" })
+vim.keymap.set("n", "<leader>xu", ":bd!<enter>", { desc = "close current buffer [u]nsafely" })
 vim.keymap.set("n", "<tab>", ":bnext<enter>", { desc = "Go to next buffer" })
 vim.keymap.set("n", "<S-Tab>", ":bprev<enter>", { desc = "Go to previous buffer" })
 

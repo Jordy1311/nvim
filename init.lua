@@ -70,7 +70,7 @@ vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [q]uickfix list" })
 
 -- Keybinds to make split navigation easier.
 -- See `:help wincmd` for a list of all window commands
@@ -160,10 +160,12 @@ require("lazy").setup({
         { "<leader>d", group = "[d]ocument" },
         { "<leader>f", group = "[f]ormat" },
         { "<leader>h", group = "Git [h]unk", mode = { "n", "v" } },
+        { "<leader>l", group = "[l]azygit" },
         { "<leader>r", group = "[r]ename" },
         { "<leader>s", group = "[s]earch" },
         { "<leader>t", group = "[t]oggle" },
         { "<leader>w", group = "[w]orkspace" },
+        { "<leader>x", group = "[x] Close" },
       })
     end,
   },
@@ -200,14 +202,14 @@ require("lazy").setup({
       pcall(require("telescope").load_extension, "ui-select")
 
       local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-      vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-      vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
-      vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-      vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
-      vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
-      vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
-      vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "search [h]elp" })
+      vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "search [k]eymaps" })
+      vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "search [f]iles" })
+      vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "search [w]ord" })
+      vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "search by [g]rep" })
+      vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "search [d]iagnostics" })
+      vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "search [r]esume" })
+      vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = 'search Recent Files ([.] for repeat)' })
       vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
       -- Slightly advanced example of overriding default behavior and theme
@@ -223,12 +225,12 @@ require("lazy").setup({
           grep_open_files = true,
           prompt_title = "Live Grep in Open Files",
         })
-      end, { desc = "[S]earch [/] in Open Files" })
+      end, { desc = "search [/] in Open Files" })
 
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set("n", "<leader>sn", function()
         builtin.find_files({ cwd = vim.fn.stdpath("config") })
-      end, { desc = "[S]earch [N]eovim files" })
+      end, { desc = "search [n]eovim files" })
     end,
   },
 
@@ -261,33 +263,33 @@ require("lazy").setup({
 
           -- Jump to the definition of the word under your cursor.
           --  To jump back, press <C-t>.
-          map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+          map("gd", require("telescope.builtin").lsp_definitions, "goto [d]efinition")
 
           -- Find references for the word under your cursor.
-          map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+          map("gr", require("telescope.builtin").lsp_references, "goto [r]eferences")
 
           -- Jump to the implementation of the word under your cursor.
-          map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
+          map("gI", require("telescope.builtin").lsp_implementations, "goto [i]mplementation")
 
           -- Jump to the type of the word under your cursor.
           map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+          map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "document [s]ymbols")
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
-          map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+          map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "workspace [s]ymbols")
 
           -- Rename the variable under your cursor.
-          map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+          map("<leader>rn", vim.lsp.buf.rename, "re[n]ame")
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-          map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+          map("<leader>ca", vim.lsp.buf.code_action, "code [a]ction")
 
-          map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+          map("gD", vim.lsp.buf.declaration, "goto [D]eclaration")
 
           -- I've deleted the autocommands that highlighted all words the same under cursor.
           -- I could get this back from kickstart.
@@ -299,7 +301,7 @@ require("lazy").setup({
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
             map("<leader>th", function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-            end, "[T]oggle Inlay [H]ints")
+            end, "toggle Inlay [h]ints")
           end
         end,
       })
