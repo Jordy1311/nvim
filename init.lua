@@ -142,7 +142,7 @@ require("lazy").setup({
       current_line_blame_opts = {
         virt_text = true,
         virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
-        delay = 5000,
+        delay = 2000,
         ignore_whitespace = true,
         virt_text_priority = 100,
       },
