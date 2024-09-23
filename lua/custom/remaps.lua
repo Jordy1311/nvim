@@ -1,9 +1,6 @@
 vim.opt.wrap = true
 vim.opt.autoread = true
 
--- makes splitting the window easier
-vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "split [v]ertical" })
-
 -- moves selected text up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected text down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected text up" })
@@ -34,3 +31,4 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = { "*.md" },
   command = "setlocal textwidth=80",
 })
+
