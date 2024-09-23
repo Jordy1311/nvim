@@ -9,7 +9,7 @@ return {
         require("conform").format({ async = true, lsp_fallback = true })
       end,
       mode = "",
-      desc = "format [b]uffer",
+      desc = "Format [b]uffer",
     },
     {
       "<leader>fc",
@@ -54,7 +54,7 @@ return {
         format_hunk()
       end,
       mode = "",
-      desc = "format [c]hanges",
+      desc = "Format [c]hanges",
     },
   },
   opts = {
