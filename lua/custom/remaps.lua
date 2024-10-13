@@ -15,8 +15,8 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search instance. Keep curso
 vim.keymap.set("n", "Q", "<nop>", { desc = "Prevents default behaviour" })
 
 -- buffer management
-vim.keymap.set("n", "<leader>xs", ":bd<enter>", { desc = "Close current buffer [s]afely" })
-vim.keymap.set("n", "<leader>xu", ":bd!<enter>", { desc = "Close current buffer [u]nsafely" })
+vim.keymap.set("n", "<leader>xs", ":bd<CR>:bn<CR>", { desc = "Close current buffer [s]afely" })
+vim.keymap.set("n", "<leader>xu", ":bd!<CR>:bn<CR>", { desc = "Close current buffer [u]nsafely" })
 vim.keymap.set("n", "<tab>", ":bnext<enter>", { desc = "Go to next buffer" })
 vim.keymap.set("n", "<S-Tab>", ":bprev<enter>", { desc = "Go to previous buffer" })
 
