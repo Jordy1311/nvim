@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 local global = vim.g
 local option = vim.opt
 local keymap = vim.keymap
@@ -70,16 +72,11 @@ require("lazy").setup({
     config = function()
       require("which-key").setup()
       require("which-key").add({
-        { "<leader>c", group = "[c]ode..." },
-        { "<leader>d", group = "[d]ocument..." },
         { "<leader>f", group = "[f]ormat..." },
-        { "<leader>h", group = "Git [h]unk...", mode = { "n", "v" } },
         { "<leader>l", group = "[l]azygit..." },
         { "<leader>r", group = "[r]ename..." },
         { "<leader>s", group = "[s]earch..." },
         { "<leader>t", group = "[t]oggle..." },
-        { "<leader>w", group = "[w]orkspace..." },
-        { "<leader>x", group = "[x] Close..." },
       })
     end,
   },
@@ -91,7 +88,7 @@ require("lazy").setup({
       { "nvim-lua/plenary.nvim" },
       { "nvim-telescope/telescope-live-grep-args.nvim", version = "^1.0.0" },
       { "nvim-telescope/telescope-ui-select.nvim" },
-      { "nvim-tree/nvim-web-devicons", enabled = global.have_nerd_font },
+      { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
@@ -100,23 +97,26 @@ require("lazy").setup({
         end,
       },
     },
+
     config = function()
       local telescope = require("telescope")
+      local builtin = require("telescope.builtin")
       local lga_actions = require("telescope-live-grep-args.actions")
 
       telescope.setup({
         defaults = {
-          path_display = { "filename_first", "smart" },
+          scroll_stratagey = "limit",
+          path_display = { "filename_first","smart" },
         },
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown(),
-          },
+        },
           live_grep_args = {
             mappings = {
               i = {
                 ["<C-k>"] = lga_actions.quote_prompt(),
-                ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob  **" }),
+                ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob  **" }),
               },
             },
           },
@@ -127,7 +127,6 @@ require("lazy").setup({
       pcall(telescope.load_extension, "ui-select")
       pcall(telescope.load_extension, "live_grep_args")
 
-      local builtin = require("telescope.builtin")
       keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Search [h]elp" })
       keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "Search [k]eymaps" })
       keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search [f]iles" })
