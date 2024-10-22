@@ -8,6 +8,7 @@ global.mapleader = " "
 global.maplocalleader = " "
 global.have_nerd_font = true
 
+---------- visual
 option.number = true
 option.relativenumber = true
 option.background = "dark"
@@ -21,6 +22,7 @@ option.cursorline = true
 option.scrolloff = 10
 option.hlsearch = true
 
+---------- behavioural
 option.clipboard = "unnamedplus"
 option.autoread = true
 option.mouse = "a"
@@ -56,7 +58,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { "olimorris/onedarkpro.nvim", priority = 1000 },
+  { "olimorris/onedarkpro.nvim", priority = 1000000 },
   { "tpope/vim-sleuth" },
 
   require("plugins.bufferline"),
