@@ -43,6 +43,7 @@ keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move [u]p. Keep cursor in middle" 
 keymap.set("n", "n", "nzzzv", { desc = "Next search instance. Keep cursor in middle" })
 keymap.set("n", "N", "Nzzzv", { desc = "Previous search instance. Keep cursor in middle" })
 keymap.set("n", "<leader>x", ":bd<CR>:bn<CR>", { desc = "Close current buffer safely" })
+keymap.set("n", "<leader>X", ":bd!<CR>:bn<CR>", { desc = "Close current buffer forcefully" })
 keymap.set("n", "<tab>", ":bnext<enter>", { desc = "Go to next buffer" })
 keymap.set("n", "<S-Tab>", ":bprev<enter>", { desc = "Go to previous buffer" })
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected text down" })
