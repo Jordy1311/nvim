@@ -65,6 +65,7 @@ require("lazy").setup({
   require("plugins.nvim-cmp"),
   require("plugins.treesitter"),
   require("plugins.treesitter-context"),
+  require("plugins.neo-tree"),
   require("plugins.conform"),
   require("plugins.lazygit"),
   require("plugins.gitsigns"),
