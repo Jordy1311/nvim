@@ -8,16 +8,7 @@ return {
   },
   cmd = "Neotree",
   keys = {
-    { "\\", ":Neotree float toggle reveal<CR>", desc = "NeoTree reveal" },
-  },
-  opts = {
-    filesystem = {
-      window = {
-        mappings = {
-          ["\\"] = "close_window",
-        },
-      },
-    },
+    { "\\", ":Neotree focus filesystem float toggle reveal<CR>", desc = "NeoTree reveal" },
   },
 }
 
