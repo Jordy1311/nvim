@@ -24,7 +24,30 @@ return {
     telescope.setup({
       defaults = {
         scroll_stratagey = "limit",
-        path_display = { "filename_first","smart" },
+        path_display = function(_, path)
+          local tail = vim.fs.basename(path)
+          local dir = vim.fs.dirname(path)
+
+          if dir == '.' then return tail end
+
+          local win_width = vim.api.nvim_win_get_width(0)
+          local max_dir_len = win_width - #tail - 10
+
+          if #dir > max_dir_len then
+            local parts = vim.split(dir, '/')
+            for i = #parts, 1, -1 do
+              repeat
+                parts[i] = parts[i]:sub(1, -2)
+                dir = table.concat(parts, '/')
+              until #dir <= max_dir_len or #parts[i] == 1
+            end
+          end
+
+          local padding = win_width - (#tail + #dir) - 5
+          if padding < 0 then padding = 0 end
+
+          return tail .. string.rep(' ', padding) .. dir
+        end,
       },
       extensions = {
         ["ui-select"] = {
