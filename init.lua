@@ -4,11 +4,12 @@ local global = vim.g
 local option = vim.opt
 local keymap = vim.keymap
 
+---------- global options
 global.mapleader = " "
 global.maplocalleader = " "
 global.have_nerd_font = true
 
----------- visual
+---------- visual options
 option.number = true
 option.relativenumber = true
 option.background = "dark"
@@ -22,7 +23,7 @@ option.cursorline = true
 option.scrolloff = 10
 option.hlsearch = true
 
----------- behavioural
+---------- behavioural options
 option.clipboard = "unnamedplus"
 option.autoread = true
 option.mouse = "a"
@@ -34,6 +35,7 @@ option.timeoutlen = 300
 option.splitright = true
 option.inccommand = "split"
 
+---------- key re-maps
 keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = " Open diagnostic [q]uickfix list" })
 keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
@@ -106,14 +108,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- open jade files as pug
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufReadPost" }, {
+  desc = "Open jade files as pug files",
   pattern = { "*.jade" },
   command = "setlocal filetype=pug",
 })
 
--- Enables text wrapping on markdown files
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  desc = "Enables text wrapping on markdown files",
   pattern = { "*.md" },
   command = "setlocal textwidth=80",
 })
