@@ -1,4 +1,5 @@
-return { "stevearc/conform.nvim",
+return {
+  "stevearc/conform.nvim",
   event = { "BufWritePre", "BufNewFile" },
   cmd = { "ConformInfo" },
   keys = {
