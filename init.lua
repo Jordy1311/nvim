@@ -1,3 +1,4 @@
+-- enables lua things
 vim.loader.enable()
 
 local global = vim.g
