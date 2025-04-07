@@ -92,7 +92,6 @@ require("lazy").setup({
 
   {
     "folke/which-key.nvim",
-    lazy = true,
     event = "VimEnter",
     config = function()
       require("which-key").setup()
@@ -186,7 +185,6 @@ require("lazy").setup({
 
   {
     "nvim-telescope/telescope.nvim",
-    lazy = true,
     event = "VimEnter",
     branch = "0.1.x",
     dependencies = {
@@ -284,7 +282,6 @@ require("lazy").setup({
 
   {
     "hrsh7th/nvim-cmp",
-    lazy = true,
     event = "InsertEnter",
     dependencies = {
       { "hrsh7th/cmp-nvim-lsp" },
@@ -324,7 +321,7 @@ require("lazy").setup({
         completion = { completeopt = "menu,menuone,noinsert" },
         mapping = cmp.mapping.preset.insert({
           ["<Return>"] = cmp.mapping.confirm({ select = true }),
-          ["<S-Return>"] = cmp.mapping.complete(),
+          ["<C-Space>"] = cmp.mapping.complete(),
           ["<Esc>"] = cmp.mapping.abort(),
           ["<Tab>"] = cmp.mapping.select_next_item(),
           ["<S-Tab>"] = cmp.mapping.select_prev_item(),
@@ -380,7 +377,6 @@ require("lazy").setup({
 
   {
     "nvim-treesitter/nvim-treesitter-context",
-    lazy = true,
     event = "BufWinEnter",
     opts = {
       max_lines = 3,
@@ -392,7 +388,6 @@ require("lazy").setup({
 
   {
     "nvim-neo-tree/neo-tree.nvim",
-    lazy = true,
     cmd = "Neotree",
     version = "*",
     dependencies = {
@@ -407,7 +402,6 @@ require("lazy").setup({
 
   {
     "stevearc/conform.nvim",
-    lazy = true,
     event = { "BufWritePre", "BufNewFile" },
     cmd = { "ConformInfo" },
     keys = {
@@ -480,7 +474,6 @@ require("lazy").setup({
 
   {
     "kdheepak/lazygit.nvim",
-    lazy = true,
     dependencies = { "nvim-lua/plenary.nvim" },
     cmd = {
       "LazyGit",
@@ -494,7 +487,6 @@ require("lazy").setup({
 
   {
     "lewis6991/gitsigns.nvim",
-    lazy = true,
     event = "BufWinEnter",
     opts = {
       signs = { add = { text = "+" }, change = { text = "C" }, delete = { text = "D" } },
@@ -510,7 +502,6 @@ require("lazy").setup({
       local statusline = require("mini.statusline")
       statusline.setup({ use_icons = vim.g.have_nerd_font })
 
-      ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return "%2l:%-2v"
       end
@@ -519,7 +510,6 @@ require("lazy").setup({
 
   {
     "windwp/nvim-autopairs",
-    lazy = true,
     event = "InsertEnter",
     config = function()
       require("nvim-autopairs").setup()
@@ -528,7 +518,6 @@ require("lazy").setup({
 
   {
     "norcalli/nvim-colorizer.lua",
-    lazy = true,
     event = "BufWinEnter",
     opts = {
       "*",
@@ -541,7 +530,6 @@ require("lazy").setup({
 
   {
     "folke/todo-comments.nvim",
-    lazy = true,
     event = "BufWinEnter",
     opts = {},
   },
@@ -584,3 +572,4 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = { "*.md" },
   command = "setlocal textwidth=80",
 })
+
